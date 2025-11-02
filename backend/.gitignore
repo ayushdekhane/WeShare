@@ -7,7 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore env files
 .env
+backend/.env
+frontend/.env
+admin/.env
+
 node_modules
 *.local
 
