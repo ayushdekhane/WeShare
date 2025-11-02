@@ -27,7 +27,7 @@ const Navbar = ({ setShowLogin }) => {
       </ul>
       <div className="navbar-right">
         {/* <img src={assets.search_icon} alt="" /> */}
-        <button><a href='http://localhost:5174'>Donar's Page</a></button>
+        <button><a href='https://weshare-admin.onrender.com'>Donar's Page</a></button>
         {!token ? <button onClick={() => setShowLogin(true)}>sign in</button>
           : <div className='navbar-profile'>
             <img src={assets.profile_icon} alt="" />
@@ -49,3 +49,4 @@ const Navbar = ({ setShowLogin }) => {
 }
 
 export default Navbar
+
