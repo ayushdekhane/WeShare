@@ -1,0 +1,93 @@
+.food-item{
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #dccece15;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    /* Layout: fixed-height card with column flex so image area cannot push height */
+    display: flex;
+    flex-direction: column;
+    height: 420px; /* total card height - adjust as needed */
+    overflow: hidden; /* prevent internal content from expanding card */
+}
+.food-item:hover{
+    transform: scale(1.02);
+}
+.food-item-img-container{
+    position: relative;
+    width: 100%;
+    /* Reserve a fixed portion of the card for the image so it cannot change card height */
+    flex: 0 0 240px; /* fixed height for image area */
+    height: 240px;
+    overflow: hidden; /* crop anything larger than the box */
+    border-radius: 15px 15px 0 0; /* round top corners on the image container */
+}
+.food-item-img-container .add{
+    width: 35px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.food-item-img-container .add:hover{
+    border: 2px solid #FF4C24;
+}
+.food-item-img-container > img.food-item-image,
+.food-item-img-container img.food-item-image{
+    /* highly specific and strong rules to avoid being overridden by global img styles */
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important; /* fill and crop to avoid changing box size */
+    object-position: center center !important;
+    max-width: none !important;
+}
+
+/* Ensure the info area takes remaining space and doesn't overflow the card */
+.food-item-info{
+    padding: 20px;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+.food-item-counter{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+.food-item-counter img{
+    width: 30px;
+}
+/* removed duplicate empty .food-item-info rule (styles are defined above) */
+.food-item-name-rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.food-item-name-rating p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.food-item-name-rating img{
+    width: 70px;
+}
+.food-item-desc{
+    color: #676767;
+    font-size: 12px;
+}
+.food-item-price{
+    color: #FF4C24;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+}

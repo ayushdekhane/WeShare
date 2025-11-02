@@ -1,0 +1,25 @@
+.videocontainer{
+   /* make the container fill the viewport so we can center the video vertically */
+   min-height: 100vh;
+   width: 100%;
+
+   /* center child (the <video>) horizontally and vertically */
+   display: flex;
+   align-items: center; /* vertical center */
+   justify-content: center; /* horizontal center */
+
+   /* ensure the container doesn't introduce unexpected overflow */
+   overflow: hidden;
+}
+
+.videocontainer video{
+   /* make video responsive while preserving aspect ratio */
+   max-width: 100%;
+   max-height: 100vh; /* don't exceed viewport height */
+   width: auto;
+   height: auto;
+
+   /* optionally cover the area while keeping center alignment if you prefer a cover behavior */
+   /* object-fit: cover; */
+   display: block;
+}
