@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 //config variables
 const currency = "inr";
 const deliveryCharge = 50;
-const frontend_URL = 'http://localhost:5173';
+const frontend_URL = 'https://weshare-frontend-xu2t.onrender.com/';
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
@@ -129,5 +129,6 @@ const verifyOrder = async (req, res) => {
     }
 
 }
+
 
 export { placeOrder, listOrders, userOrders, updateStatus, verifyOrder, placeOrderCod }
